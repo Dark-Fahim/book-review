@@ -5,10 +5,10 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import App from './App.jsx'
 import Root from './components/Root/Root.jsx';
 import Home from './components/Home/Home.jsx';
 import BooksDetails from './components/BooksDetails/BooksDetails.jsx';
+import ListedBooks from './components/ListedBooks/ListedBooks.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +23,11 @@ const router = createBrowserRouter([
         path:  '/book/:bookId',
         element: <BooksDetails></BooksDetails>,
         loader: () => fetch(`books.json`)
+      },
+      {
+        path: '/listed',
+        element: <ListedBooks></ListedBooks>,
+        loader: () => fetch('books.json')
       }
     ]
   }
