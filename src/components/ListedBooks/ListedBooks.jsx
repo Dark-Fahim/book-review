@@ -8,12 +8,13 @@ import WishlistBook from '../WishlistBook/WishlistBook';
 
 const ListedBooks = () => {
     const books = useLoaderData()
+    
     // const [booksRead, setBooksRead]  = useState([])
+    console.log(books);
     const readBookIds = getReadBooksFromLS()
     const readBooks = books.filter(book => readBookIds.includes(book.bookId))
     const wishlistBookIds = getWishlistBooksFromLS()
     const wishlistBooks = books.filter(book => wishlistBookIds.includes(book.bookId))
-
 
     console.log(readBooks);
     return (
@@ -30,7 +31,7 @@ const ListedBooks = () => {
             </details>
             {/* name of each tab group should be unique */}
             <div className="tabs tabs-lift">
-                <input type="radio" name="my_tabs_3" className="tab" aria-label="Read Books" />
+                <input type="radio" name="my_tabs_3" className="tab" aria-label="Read Books" defaultChecked/>
                 <div className="tab-content bg-base-100 border-base-300 p-6">
                     <div className='my-6'>
                         {
@@ -39,7 +40,7 @@ const ListedBooks = () => {
                     </div>
                 </div>
 
-                <input type="radio" name="my_tabs_3" className="tab" aria-label="Wishlist" defaultChecked />
+                <input type="radio" name="my_tabs_3" className="tab" aria-label="Wishlist"  />
                 <div className="tab-content bg-base-100 border-base-300 p-6">
                     {
                         wishlistBooks.map(book => <WishlistBook book={book} key={book.bookId}></WishlistBook>)

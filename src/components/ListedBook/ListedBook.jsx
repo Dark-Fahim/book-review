@@ -1,5 +1,8 @@
 // import { useContext } from "react";
 // import { ReadContext } from "../ListedBooks/ListedBooks";
+import { CgProfile } from "react-icons/cg";
+import { TbBook2 } from "react-icons/tb";
+import { IoLocationSharp } from "react-icons/io5";
 
 
 const ListedBook = ({book}) => {
@@ -18,11 +21,11 @@ const ListedBook = ({book}) => {
                     {
                         tags.map((tag, idx) => <p className="text-[#23BE0A] p-1 bg-[#23BE0A33]" key={idx}>#{tag}</p>)
                     }
-                    <p className="text-[#131313CC]">Year Of Publishing: {yearOfPublishing}</p>
+                    <p className="text-[#131313CC] flex gap-1 items-center"><IoLocationSharp /> Year Of Publishing: {yearOfPublishing}</p>
                 </div>
                 <div className="flex text-[#13131399] gap-6">
-                    <p><span></span>Publisher: {publisher}</p>
-                    <p><span></span>Pages: {totalPages}</p>
+                    <p className="flex items-center gap-1"><span><CgProfile /></span>Publisher: {publisher}</p>
+                    <p className="flex items-center gap-1"><span><TbBook2 /></span>Pages: {totalPages}</p>
                 </div>
                 <hr  className="border border-[#13131326]"/>
                 <div className="flex gap-4">
