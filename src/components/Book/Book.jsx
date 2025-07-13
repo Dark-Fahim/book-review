@@ -1,9 +1,11 @@
 import { FaRegStar } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 const Book = ({ book }) => {
-    const { image, bookName, author, category, tags, rating } = book
+    const { image, bookName, author, category, tags, rating, bookId } = book
+    const navigate = useNavigate()
     return (
-        <div className="cursor-pointer">
+        <div className="cursor-pointer" onClick={() => navigate(`/book/${bookId}`)}>
             <div className="card bg-base-100 w-96 shadow-sm p-6">
                 <figure className="bg-[#F3F3F3] p-8">
                     <img className="w-32"
