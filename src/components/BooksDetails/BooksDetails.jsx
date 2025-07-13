@@ -1,5 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { getReadBooksFromLS, getWishlistBooksFromLS, saveReadBooksToLS, saveWishlistsBooksToLS } from "../../utils/localStorage";
+import { getReadBooksFromLS, getWishlistBooksFromLS, saveReadBooksToLS, saveWishlistsBooksToLS, updateWishlist } from "../../utils/localStorage";
 import { ToastContainer, toast } from 'react-toastify';
 
 
@@ -14,6 +14,8 @@ const BooksDetails = () => {
     const handleReadBooks = () =>{
         const wishlistBooks = getWishlistBooksFromLS()
         const readBooks = getReadBooksFromLS()
+        const remaining = wishlistBooks.filter(id => id !== parseInt(bookId))
+        updateWishlist(remaining)
         for(const id of readBooks){
             if(id === parseInt(bookId)){
                 toast("Already Added To Read");

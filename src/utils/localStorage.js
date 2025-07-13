@@ -29,10 +29,14 @@ const saveWishlistsBooksToLS = id =>{
     const exist = wishlist.find(bookId => bookId === id)
     if(!exist){
         wishlist.push(id)
-    }
-    
+    } 
     localStorage.setItem('wishlist', JSON.stringify(wishlist))
 }
 
+const updateWishlist = arr =>{
+    localStorage.removeItem('wishlist')
+    localStorage.setItem('wishlist', JSON.stringify(arr))
+}
 
-export {getReadBooksFromLS, getWishlistBooksFromLS, saveReadBooksToLS, saveWishlistsBooksToLS}
+
+export {getReadBooksFromLS, getWishlistBooksFromLS, saveReadBooksToLS, saveWishlistsBooksToLS, updateWishlist}
