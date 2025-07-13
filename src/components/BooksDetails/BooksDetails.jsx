@@ -50,15 +50,15 @@ const BooksDetails = () => {
     }
 
     return (
-        <div className="flex flex-col md:grid grid-cols-2 gap-6 my-20 container mx-auto">
-            <div className="p-20 bg-[#1313130D] rounded-lg">
+        <div className="flex p-5 md:p-0 flex-col md:grid grid-cols-2 gap-6 my-20 container mx-auto">
+            <div className="md:p-20 p-10 bg-[#1313130D] rounded-lg">
                 <img className="w-fit" src={image} alt="" />
             </div>
             <div className="flex flex-col justify-between">
-                <h2 className="text-4xl heading font-bold">{bookName}</h2>
-                <p className="text-xl my-5 text-[#131313CC]">By : {author}</p>
+                <h2 className="md:text-4xl heading font-bold">{bookName}</h2>
+                <p className="md:text-xl my-5 text-[#131313CC]">By : {author}</p>
                 <hr className="border-[#13131326]" />
-                <p className="my-5 text-xl text-[#131313CC]">{category}</p>
+                <p className="md:my-5 text-xl text-[#131313CC]">{category}</p>
                 <hr className="border-[#13131326]" />
                 <p className="text-[#131313CC] my-5"><span className="font-bold text-black">Review: </span>{review}</p>
                 <ul className="flex gap-4 my-6">
