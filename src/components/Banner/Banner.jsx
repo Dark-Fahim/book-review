@@ -11,7 +11,7 @@ const Banner = () => {
                 </NavLink>
             </div>
             <div className="md:w-1/2 md:flex justify-end">
-                <img className="w-60" src="https://i.pinimg.com/736x/32/4d/f3/324df3d74916177835279c6e642967c8.jpg" alt="book-banner" />
+                <img className="w-96" src="https://i.pinimg.com/736x/32/4d/f3/324df3d74916177835279c6e642967c8.jpg" alt="book-banner" />
             </div>
             
         </div>
